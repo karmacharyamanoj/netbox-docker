@@ -4,7 +4,7 @@ services:
     ports:
     - 8080:8080
     volumes:
-    - /home/mkarmach/netbox-docker:/etc/netbox/config:z,ro
+    - /home/mkarmach/netbox-docker/configuration:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:rw
     - netbox-reports-files:/opt/netbox/netbox/reports:rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:rw
@@ -12,13 +12,13 @@ services:
       retries: 15
   netbox-worker:
     volumes:
-    - /home/mkarmach/netbox-docker:/etc/netbox/config:z,ro
+    - /home/mkarmach/netbox-docker/configuration:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:rw
     - netbox-reports-files:/opt/netbox/netbox/reports:rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:rw    
   netbox-housekeeping:
     volumes:
-    - /home/mkarmach/netbox-docker:/etc/netbox/config:z,ro
+    - /home/mkarmach/netbox-docker/configuration:/etc/netbox/config:z,ro
     - netbox-media-files:/opt/netbox/netbox/media:rw
     - netbox-reports-files:/opt/netbox/netbox/reports:rw
     - netbox-scripts-files:/opt/netbox/netbox/scripts:rw    
